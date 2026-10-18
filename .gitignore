@@ -1,0 +1,9 @@
+# Ignore Mac system files
+.DS_Store
+
+# Ignore temporary Word files
+~$*.docx
+
+# Ignore temporary and backup files
+*.tmp
+*.bak
