@@ -47,11 +47,11 @@ Sprint 2: System Design and Finalization
 
 GitHub Project
 
-Project Board: [Insert GitHub Project URL]
+Project Board: https://github.com/users/shaikha220/projects/2/views/1
 
 GitHub Milestone: [Insert Milestone-1 URL]
 
-Repository: [Insert Repository URL]
+Repository: https://github.com/shaikha220/team-b54-g04
 
 Project Deliverables
 
