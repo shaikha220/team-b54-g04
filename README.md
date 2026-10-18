@@ -49,7 +49,7 @@ GitHub Project
 
 Project Board: https://github.com/users/shaikha220/projects/2/views/1
 
-GitHub Milestone: [Insert Milestone-1 URL]
+GitHub Milestone: https://github.com/shaikha220/team-b54-g04/milestone/1
 
 Repository: https://github.com/shaikha220/team-b54-g04
 
