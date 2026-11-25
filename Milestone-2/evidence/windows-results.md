@@ -1,6 +1,6 @@
 # Windows demonstration — 25 November 2026
 
-Original GUI captures were supplied by the team; the screenshot binaries are pending upload. The core recheck was run independently with Java 21/Linux.
+Original GUI captures were supplied by the team and are available in the [screenshots folder](screenshots/). The core recheck was run independently with Java 21/Linux.
 
 | Evidence | Expected | Observed | Result |
 |---|---|---|---|

@@ -1,2 +1,8 @@
-# Evidence
-Windows GUI captures and Maven build log were supplied; binary screenshots and report have not yet been transferred to GitHub. Core checks are executable using scripts/test-core.ps1. Maven BUILD SUCCESS alone is not a test count.
+# Testing evidence
+
+- [Windows demonstration results](windows-results.md)
+- [Original Windows screenshots](screenshots/)
+- [Functional test cases](test-cases.csv)
+- [Independent core recheck](core-test-results-recheck.txt)
+
+The Windows Maven log demonstrates compilation success, not a Surefire test count. The independent core runner records 15 passes. Native VP and actual peer-review evidence remain outstanding.

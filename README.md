@@ -6,7 +6,7 @@
 
 A JavaFX desktop prototype for UC04 Add Goods and UC13 Process Sale, using a shared in-memory inventory, receipt generation, inventory movements, and cancellation without stock deduction.
 
-**Status:** Windows GUI demonstrated; Java core scenario results documented. Native Visual Paradigm models, peer review and final submission remain subject to team verification. Java source, resources, functional checks and editable UML models are on the main branch. Four original Windows screenshots are available below. Remaining evidence and report files are being added.
+**Status:** Windows GUI demonstrated; Java core scenario results documented. Native Visual Paradigm models, peer review and final submission remain subject to team verification. Java source, resources, functional checks and editable UML models are on the main branch. All eight original Windows screenshots, six UML diagram images, and Word/PDF report are available below.
 
 ### Team and backlog
 
@@ -40,15 +40,43 @@ The recorded Windows session demonstrates restocking (18 → 22), new item regis
 | **Insufficient stock validation** | **Activity log and cancellation** |
 | ![Validation](Milestone-2/evidence/screenshots/05-insufficient-stock.png) | ![Activity log](Milestone-2/evidence/screenshots/07-activity-log.png) |
 
+| New item | Stock after sale |
+|---|---|
+| ![Register new item](Milestone-2/evidence/screenshots/02-new-item.png) | ![Stock after sale](Milestone-2/evidence/screenshots/04-stock-after-sale.png) |
+| **Cancellation confirmation** | **Maven build success** |
+| ![Cancellation](Milestone-2/evidence/screenshots/06-cancel-confirmation.png) | ![Build success](Milestone-2/evidence/screenshots/08-maven-build-success.png) |
+
 ### Design and deliverables
 
 - [Source and project instructions](Milestone-2/README.md)
 - [UML design sources](Milestone-2/design/): [Add Goods](Milestone-2/design/01-add-goods.puml), [Process Sale](Milestone-2/design/02-process-sale.puml), [Class model](Milestone-2/design/03-class-model.puml), [Architecture](Milestone-2/design/04-architecture.puml), [Facade](Milestone-2/design/05-facade.puml), [Strategy](Milestone-2/design/06-strategy.puml).
 - [Testing evidence](Milestone-2/evidence/)
-- Word/PDF report: pending binary transfer.
+- [Word report](Milestone-2/report/PearlMart_B54_G04_M2_Report_Updated.docx) · [PDF report](Milestone-2/report/PearlMart_B54_G04_M2_Report_Updated.pdf). The report is the prepared design/testing version; live Scrum evidence and native VP models remain to be finalized.
 - [Scrum plan](Milestone-2/scrum/PLAN.md) and the linked GitHub issues.
 - Structural pattern: Facade. Behavioral pattern: Strategy.
 - Testing Route A; actual evidence is distinguished from pending verification.
+
+### UML diagram gallery
+
+**UC04 — Add Goods**
+
+![Add Goods sequence](Milestone-2/design/01-add-goods.png)
+
+**UC13 — Process Sale**
+
+![Process Sale sequence](Milestone-2/design/02-process-sale.png)
+
+**Focused class model**
+
+![Class diagram](Milestone-2/design/03-class-model.png)
+
+**Architecture**
+
+![Architecture](Milestone-2/design/04-architecture.png)
+
+| Facade (structural) | Strategy (behavioral) |
+|---|---|
+| ![Facade](Milestone-2/design/05-facade.png) | ![Strategy](Milestone-2/design/06-strategy.png) |
 
 ---
 
