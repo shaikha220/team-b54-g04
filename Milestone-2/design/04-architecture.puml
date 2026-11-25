@@ -1,0 +1,17 @@
+@startuml
+package Presentation { [Workbench (JavaFX)] as UI }
+package Application { [PearlMartFacade] as F
+[StockService] as S
+[CheckoutService] as C }
+package Domain { [InventoryItem / Sale / Receipt / Movement] as D
+[PricingPolicy / RatePolicy] as P }
+package Storage { [Ledger / State (in memory)] as L }
+UI --> F
+F --> S
+F --> C
+S --> D
+C --> D
+C --> P
+S --> L
+C --> L
+@enduml
