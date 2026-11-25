@@ -1,0 +1,16 @@
+A01 new item | PASS
+A02 existing barcode | PASS
+A03 duplicate ID/barcode | PASS
+A04 zero/negative quantity | PASS
+A05 mandatory fields/price | PASS
+A06 overflow rollback | PASS
+S01 multi-line confirm | PASS
+S02 unknown item | PASS
+S03 cumulative stock / invalid qty | PASS
+S04 pending cancellation | PASS
+S05 stock changes before confirm | PASS
+S06 empty / policy failure | PASS
+S07 shared inventory / no adjustments | PASS
+S08 strategy alternate tax | PASS
+S09 remove line | PASS
+TOTAL: 15 passed, 0 failed

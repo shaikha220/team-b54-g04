@@ -6,7 +6,7 @@
 
 A JavaFX desktop prototype for UC04 Add Goods and UC13 Process Sale, using a shared in-memory inventory, receipt generation, inventory movements, and cancellation without stock deduction.
 
-**Status:** Windows GUI demonstrated; Java core scenario results documented. Native Visual Paradigm models, peer review and final submission remain subject to team verification. Java source, resources and core checks are staged on the delivery branch. Binary evidence is pending upload.
+**Status:** Windows GUI demonstrated; Java core scenario results documented. Native Visual Paradigm models, peer review and final submission remain subject to team verification. Java source, resources, functional checks and editable UML models are on the main branch. The original Windows screenshot files and Word/PDF report still require upload.
 
 ### Team and backlog
 
@@ -28,31 +28,19 @@ mvn clean javafx:run
 powershell -ExecutionPolicy Bypass -File scripts/test-core.ps1
 ```
 
-### Application screenshots
+### Windows demonstration
 
-**Stock Desk — register new goods or restock existing items**
+[Observed Windows test results](Milestone-2/evidence/windows-results.md) · [Core test cases](Milestone-2/evidence/test-cases.csv) · [Core runner result](Milestone-2/evidence/core-test-results-recheck.txt)
 
-*Screenshot pending upload: Stock Desk.*
-
-**Checkout — confirm a sale and issue a receipt**
-
-*Screenshot pending upload: Checkout.*
-
-**Validation — insufficient inventory**
-
-*Screenshot pending upload: Insufficient stock.*
-
-**Activity log — completed and cancelled transactions**
-
-*Screenshot pending upload: Activity log.*
+The recorded Windows session demonstrates restocking (18 → 22), new item registration, a QAR 116.37 receipt, stock reduction to 17, insufficient-stock rejection and a cancelled sale with no deduction. Original screenshot files are awaiting transfer; the text results are available above.
 
 ### Design and deliverables
 
 - [Source and project instructions](Milestone-2/README.md)
-- UML reference diagrams: pending transfer.
+- [UML design sources](Milestone-2/design/): [Add Goods](Milestone-2/design/01-add-goods.puml), [Process Sale](Milestone-2/design/02-process-sale.puml), [Class model](Milestone-2/design/03-class-model.puml), [Architecture](Milestone-2/design/04-architecture.puml), [Facade](Milestone-2/design/05-facade.puml), [Strategy](Milestone-2/design/06-strategy.puml).
 - [Testing evidence](Milestone-2/evidence/)
 - Word/PDF report: pending binary transfer.
-- Scrum planning: see the linked GitHub issues.
+- [Scrum plan](Milestone-2/scrum/PLAN.md) and the linked GitHub issues.
 - Structural pattern: Facade. Behavioral pattern: Strategy.
 - Testing Route A; actual evidence is distinguished from pending verification.
 
@@ -75,8 +63,8 @@ Team Members and Scrum Responsibilities
 
 | Team Member | GitHub Username |
 |---|---|
-| Member 1 | @ghadafutais | 
-| Member 2 | @alljoharaaa | 
+| Member 1 | @ghadafetais | 
+| Member 2 | @aljoharaaa | 
 | Member 3 | @Maryam-alsulaiti | 
 | Member 4 | @shaikha220 | 
 

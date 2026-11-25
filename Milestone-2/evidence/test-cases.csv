@@ -1,0 +1,16 @@
+ID,Use case,Input and setup,Expected,Actual core run,Result
+A01,UC04,Register A/B qty 10,Stock 10 and one movement,Verified 10 and one movement,PASS
+A02,UC04,A/B stock 10 restock B +3,Stock 13 movement +3,Verified 13 and +3,PASS
+A03,UC04,Register duplicate ID or barcode,Rejected no new item or movement,Verified one item and one movement,PASS
+A04,UC04,Restock 0 or -1 register 0,Rejected stock 10 unchanged,Verified 10 and one movement,PASS
+A05,UC04,Blank name or price 0,Rejected no stock,Verified zero items,PASS
+A06,UC04,Stock MAX_INT restock 1,Overflow rejected unchanged,Verified MAX_INT and one movement,PASS
+S01,UC13,Two items at 25 x2 each,Total 95 stock 8 and 4 one receipt no second deduction,Verified amounts stocks status and 4 movements,PASS
+S02,UC13,Unknown X qty 1,No line or stock move,Verified zero lines and movements,PASS
+S03,UC13,Stock 3 add 2 then 2 or zero,Reject invalid quantities keep original line,Verified qty 2 and stock 3,PASS
+S04,UC17,Stock 5 add 3 cancel,Cancelled no receipt stock 5,Verified status receipt and stock,PASS
+S05,UC13,Other sale consumes second line before confirm,Reject entire first sale no partial changes,Verified first stock 5 pending and unchanged movement count,PASS
+S06,UC15/16,Empty sale or policy throws,Reject confirmation no stock deduction,Verified stock 5 and one movement,PASS
+S07,UC04/13,Stock 1 restock 2 then sell 3,75 payable zero stock cannot cancel completed,Verified 75 and zero stock,PASS
+S08,UC16,Alternate 10% discount 5% tax 50 subtotal,47.25 payable,Verified 47.25,PASS
+S09,UC13,Remove only pending line,Empty sale cannot confirm stock 2,Verified zero lines and stock 2,PASS
