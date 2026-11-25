@@ -18,12 +18,12 @@ loop each requested item
  S -> L : snapshot()
  S --> C : item or empty
  alt unknown/invalid/insufficient (UC14)
- C --> F : validation error
- F --> UI : reject line; stock unchanged
+  C --> F : validation error
+  F --> UI : reject line; stock unchanged
  else valid
- C -> L : commit(updated pending lines)
- C --> F : Sale (price snapshot)
- F --> UI : update basket
+  C -> L : commit(updated pending lines)
+  C --> F : Sale (price snapshot)
+  F --> UI : update basket
  end
 end
 UI -> F : quote(id) [UC15]
@@ -41,13 +41,13 @@ end
 alt cancellation requested (UC17)
  A -> UI : Cancel; confirm dialog
  alt declines
- UI --> A : pending retained
+  UI --> A : pending retained
  else accepts
- UI -> F : cancel(id)
- F -> C : cancel(id)
- C -> L : commit(cancelled sale; same items)
- C --> F : cancelled Sale or error
- F --> UI : show cancellation or failure
+  UI -> F : cancel(id)
+  F -> C : cancel(id)
+  C -> L : commit(cancelled sale; same items)
+  C --> F : cancelled Sale or error
+  F --> UI : show cancellation or failure
  end
 else confirm pending sale
  A -> UI : Confirm & issue receipt
@@ -57,12 +57,12 @@ else confirm pending sale
  C -> L : snapshot()
  C -> C : recheck all quantities; stage movements + receipt
  alt invalid stock/policy/status or commit failure
- C --> F : reject; no partial update
- F --> UI : display error
+  C --> F : reject; no partial update
+  F --> UI : display error
  else valid
- C -> L : commit(stock, movements, completed sale)
- C --> F : SalesReceipt
- F --> UI : show receipt; updated inventory
+  C -> L : commit(stock, movements, completed sale)
+  C --> F : SalesReceipt
+  F --> UI : show receipt; updated inventory
  end
 end
 @enduml
