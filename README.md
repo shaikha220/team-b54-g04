@@ -6,7 +6,7 @@
 
 A JavaFX desktop prototype for UC04 Add Goods and UC13 Process Sale, using a shared in-memory inventory, receipt generation, inventory movements, and cancellation without stock deduction.
 
-**Status:** Windows GUI demonstrated; Java core scenario results documented. Native Visual Paradigm models, peer review and final submission remain subject to team verification. Java source, resources, functional checks and editable UML models are on the main branch. The original Windows screenshot files and Word/PDF report still require upload.
+**Status:** Windows GUI demonstrated; Java core scenario results documented. Native Visual Paradigm models, peer review and final submission remain subject to team verification. Java source, resources, functional checks and editable UML models are on the main branch. Four original Windows screenshots are available below. Remaining evidence and report files are being added.
 
 ### Team and backlog
 
@@ -32,7 +32,13 @@ powershell -ExecutionPolicy Bypass -File scripts/test-core.ps1
 
 [Observed Windows test results](Milestone-2/evidence/windows-results.md) · [Core test cases](Milestone-2/evidence/test-cases.csv) · [Core runner result](Milestone-2/evidence/core-test-results-recheck.txt)
 
-The recorded Windows session demonstrates restocking (18 → 22), new item registration, a QAR 116.37 receipt, stock reduction to 17, insufficient-stock rejection and a cancelled sale with no deduction. Original screenshot files are awaiting transfer; the text results are available above.
+The recorded Windows session demonstrates restocking (18 → 22), new item registration, a QAR 116.37 receipt, stock reduction to 17, insufficient-stock rejection and a cancelled sale with no deduction. Original screenshots are shown below; additional results are documented above.
+
+| Stock desk | Checkout and receipt |
+|---|---|
+| ![Restock](Milestone-2/evidence/screenshots/01-restock.png) | ![Completed sale](Milestone-2/evidence/screenshots/03-completed-receipt.png) |
+| **Insufficient stock validation** | **Activity log and cancellation** |
+| ![Validation](Milestone-2/evidence/screenshots/05-insufficient-stock.png) | ![Activity log](Milestone-2/evidence/screenshots/07-activity-log.png) |
 
 ### Design and deliverables
 
