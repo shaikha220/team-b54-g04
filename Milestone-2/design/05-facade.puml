@@ -1,0 +1,20 @@
+@startuml
+class Workbench
+class PearlMartFacade {
++ register(item)
++ restock(key,q)
++ addLine(id,key,q)
++ quote(id)
++ confirm(id)
++ cancel(id)
+}
+class StockService
+class CheckoutService
+class Ledger
+Workbench --> PearlMartFacade
+PearlMartFacade *-- StockService
+PearlMartFacade *-- CheckoutService
+PearlMartFacade *-- Ledger
+StockService --> Ledger
+CheckoutService --> Ledger
+@enduml

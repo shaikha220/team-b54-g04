@@ -1,0 +1,126 @@
+@startuml
+skinparam classAttributeIconSize 0
+class Workbench {
+ -app : PearlMartFacade
+ -saleId : String
+ +start(Stage)
+ -showStock()
+ -showSale()
+ -refresh()
+}
+class PearlMartFacade {
+ +find(key)
+ +register(item)
+ +restock(key,q)
+ +start()
+ +addLine(id,key,q)
+ +removeLine(id,itemId)
+ +quote(id)
+ +confirm(id)
+ +cancel(id)
+ +items()
+ +movements()
+ +sales()
+}
+class StockService {
+ -ledger : Ledger
+ +find(key)
+ +register(item)
+ +restock(key,q)
+ -save(item,delta)
+}
+class CheckoutService {
+ -ledger : Ledger
+ -stock : StockService
+ -policy : PricingPolicy
+ +start()
+ +get(id)
+ +addLine(id,key,q)
+ +removeLine(id,itemId)
+ +quote(id)
+ +confirm(id)
+ +cancel(id)
+}
+class Ledger {
+ -state : State
+ +snapshot() : State
+ +commit(expected,next)
+}
+class State {
+ +items : Map
+ +movements : List
+ +sales : Map
+}
+class InventoryItem {
+ +id : String
+ +barcode : String
+ +name : String
+ +price : BigDecimal
+ +quantity : int
+ +manufacturer : String
+ +origin : String
+ +expiry : LocalDate
+ +comments : String
+ +withQuantity(q)
+}
+class InventoryMovement {
+ +reference : String
+ +itemId : String
+ +delta : int
+ +balance : int
+ +time : Instant
+}
+class Sale {
+ +id : String
+ +status : Status
+ +lines : List
+ +receipt : SalesReceipt
+}
+class SaleLine {
+ +itemId : String
+ +name : String
+ +unitPrice : BigDecimal
+ +quantity : int
+ +amount()
+}
+class SalesReceipt {
+ +saleId : String
+ +time : Instant
+ +lines : List
+ +totals : Totals
+}
+class Totals {
+ +subtotal : BigDecimal
+ +discount : BigDecimal
+ +tax : BigDecimal
+ +payable : BigDecimal
+}
+interface PricingPolicy {
+ +calculate(lines) : Totals
+}
+class RatePolicy {
+ +threshold : BigDecimal
+ +discountRate : BigDecimal
+ +taxRate : BigDecimal
+ +calculate(lines) : Totals
+}
+Workbench --> "1" PearlMartFacade
+PearlMartFacade *-- "1" StockService
+PearlMartFacade *-- "1" CheckoutService
+PearlMartFacade *-- "1" Ledger
+StockService --> "1" Ledger
+CheckoutService --> "1" Ledger
+CheckoutService --> "1" StockService
+CheckoutService --> "1" PricingPolicy
+PricingPolicy <|.. RatePolicy
+Ledger *-- "1" State
+State --> "0..*" InventoryItem
+State --> "0..*" InventoryMovement
+State --> "0..*" Sale
+Sale --> "0..*" SaleLine
+Sale --> "0..1" SalesReceipt
+SalesReceipt --> "1..*" SaleLine
+SalesReceipt --> "1" Totals
+SaleLine ..> InventoryItem : itemId
+InventoryMovement ..> InventoryItem : itemId
+@enduml

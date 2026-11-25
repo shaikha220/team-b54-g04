@@ -1,0 +1,41 @@
+@startuml
+actor "Inventory Manager" as IM
+boundary Workbench as UI
+control PearlMartFacade as F
+control StockService as S
+database Ledger as L
+IM -> UI : enter ID/barcode; Find item
+UI -> F : find(key)
+F -> S : find(key)
+S -> L : snapshot()
+L --> S : State
+S --> F : Optional<InventoryItem>
+F --> UI : existing item or empty
+alt existing item
+ IM -> UI : quantity; confirm addition
+ UI -> F : restock(key, quantity)
+ F -> S : restock(key, quantity)
+else new item
+ IM -> UI : required details; Register new item
+ UI -> UI : construct InventoryItem
+ UI -> F : register(item)
+ F -> S : register(item)
+end
+alt invalid quantity, fields or duplicate ID/barcode
+ S --> F : validation error
+ F --> UI : error; unchanged state
+else valid
+ S -> L : snapshot()
+ S -> S : save(item, delta)
+ S -> L : commit(expected, next)
+ alt commit rejected
+ L --> S : error; unchanged state
+ S --> F : error
+ F --> UI : display failure
+ else commit succeeds
+ L --> S : success
+ S --> F : updated InventoryItem
+ F --> UI : updated quantity and confirmation
+ end
+end
+@enduml

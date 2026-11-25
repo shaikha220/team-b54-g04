@@ -6,7 +6,7 @@
 
 A JavaFX desktop prototype for UC04 Add Goods and UC13 Process Sale, using a shared in-memory inventory, receipt generation, inventory movements, and cancellation without stock deduction.
 
-**Status:** Windows GUI demonstrated; Java core scenario results documented. Native Visual Paradigm models, peer review and final submission remain subject to team verification. The project package is being staged; screenshot and source links become available once the corresponding files are pushed.
+**Status:** Windows GUI demonstrated; Java core scenario results documented. Native Visual Paradigm models, peer review and final submission remain subject to team verification. Java source, resources and core checks are staged on the delivery branch. Binary evidence is pending upload.
 
 ### Team and backlog
 
@@ -32,27 +32,27 @@ powershell -ExecutionPolicy Bypass -File scripts/test-core.ps1
 
 **Stock Desk — register new goods or restock existing items**
 
-![Stock Desk](Milestone-2/evidence/screenshots/01-restock.png)
+*Screenshot pending upload: Stock Desk.*
 
 **Checkout — confirm a sale and issue a receipt**
 
-![Checkout](Milestone-2/evidence/screenshots/03-completed-receipt.png)
+*Screenshot pending upload: Checkout.*
 
 **Validation — insufficient inventory**
 
-![Insufficient stock](Milestone-2/evidence/screenshots/05-insufficient-stock.png)
+*Screenshot pending upload: Insufficient stock.*
 
 **Activity log — completed and cancelled transactions**
 
-![Activity log](Milestone-2/evidence/screenshots/07-activity-log.png)
+*Screenshot pending upload: Activity log.*
 
 ### Design and deliverables
 
 - [Source and project instructions](Milestone-2/README.md)
-- [UML diagrams](Milestone-2/design/)
+- UML reference diagrams: pending transfer.
 - [Testing evidence](Milestone-2/evidence/)
-- [Project report](Milestone-2/report/)
-- [Scrum planning](Milestone-2/scrum/)
+- Word/PDF report: pending binary transfer.
+- Scrum planning: see the linked GitHub issues.
 - Structural pattern: Facade. Behavioral pattern: Strategy.
 - Testing Route A; actual evidence is distinguished from pending verification.
 

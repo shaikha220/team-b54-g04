@@ -1,0 +1,18 @@
+@startuml
+class CheckoutService {
+- policy : PricingPolicy
++ quote(id) : Totals
++ confirm(id) : SalesReceipt
+}
+interface PricingPolicy {
++ calculate(lines) : Totals
+}
+class RatePolicy {
++ threshold : BigDecimal
++ discountRate : BigDecimal
++ taxRate : BigDecimal
++ calculate(lines) : Totals
+}
+CheckoutService --> "1" PricingPolicy : delegates
+PricingPolicy <|.. RatePolicy
+@enduml
